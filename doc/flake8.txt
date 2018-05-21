@@ -1,0 +1,42 @@
+*flake8.txt* Flake8 plugin
+
+
+      FLAKE8
+
+      Reference Manual~
+
+=================================================================================================
+CONTENTS                                                                        *Flake8-contents*
+
+    1. Intro.................................|Flake8|
+    2. Functionality provided...............|Flake8Functionnality|
+        2.1 Global commands..................|Flake8GlobalCommands|
+        2.2 Api functions....................|Flake8ApiFunctions|
+    3. Installation..........................|Flake8Installation|
+    4. Options...............................|Flake8Options|
+
+=================================================================================================
+1. Intro                                                                                 *Flake8*
+
+This plugin allow to run flake8 command in background (async task) and open result in quickfix window.
+
+=================================================================================================
+2. Functionality provided                                                   *Flake8Functionality*
+
+-------------------------------------------------------------------------------------------------
+2.1 Global Commands                                                        *Flake8GlobalCommands*
+
+:Flake8 [<filename>]                                                                    *:Flake8*
+  Run flake8 in async job. If no <filename> define we use the current open file.
+
+:WriteFlake8                                                                       *:WriteFlake8*
+  Write to file and run flake8 on it.
+
+-------------------------------------------------------------------------------------------------
+2.1. Api functions                                                           *Flake8ApiFunctions*
+
+flake8#exec(<files>)                                                             *flake8#exec()*
+  Run flake8 on <files> or current file if no <files> defined.
+
+flake8#version()                                                               *flake8#version()*
+  Return the version of flake8 plugin.

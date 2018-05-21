@@ -1,3 +1,10 @@
+" flake8 plugin
+" Description:  
+" Language:     
+" Maintainer:   manslaughter <manslaughter03@gmail.com>
+" Version:      0.0.1
+" Last Change:  2018-02-18
+
 if exists("g:flake8_loaded")
     finish
 endif
@@ -6,6 +13,10 @@ let g:flake8_loaded = 1
 if !exists("g:flake8_bin")
     let g:flake8_bin = "flake8"
 endif
+
+function! flake8#version()
+  return g:flake8_plugin_version
+endfunction
 
 function! flake8#exec(...)
     let l:params = a:0 > 0 ? " " . join(a:000, " ") : ""
