@@ -22,6 +22,12 @@ function! flake8#exec(...)
     let l:params = a:0 > 0 ? " " . join(a:000, " ") : ""
     let s:tempfile = tempname()
     let l:command = printf("%s -j $(nproc)%s", g:flake8_bin, l:params)
+
+    if !executable("g:flake8_bin")
+      echoerr "You need to install flake8"
+      finish
+    endif
+
     let l:job = job_start(
                 \ l:command,
                 \ { "out_io": "file",
